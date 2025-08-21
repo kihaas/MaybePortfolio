@@ -10,6 +10,7 @@ def read_skills(db: Session = Depends(database.get_db)):
     return crud.get_skills(db)
 
 @router.post("/",response_model=schemas.SkillOut)
-def create_skill(skill: schemas)
+def create_skill(skill: schemas.SkillCreate, db: Session = Depends(database.get_db)):
+    return crud.create_skill(db=db, skill=skill)
 
 
